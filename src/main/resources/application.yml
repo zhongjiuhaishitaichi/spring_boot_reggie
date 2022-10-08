@@ -1,0 +1,46 @@
+server:
+  port: 8088
+spring:
+  application:
+    name: My_reggie
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/reggie?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+      username: root
+      password: swx
+  # 配置发送方信息
+  mail:
+    host: smtp.qq.com
+    username: 2569784015@qq.com  # 邮箱地址
+    password: vmqxxcaehdgyecfa # 授权码
+    port: 587
+    properties:
+      mail:
+        stmp:
+          ssl:
+            enable: true
+        socketFactory:
+          class: javax.net.ssl.SSLSocketFactory
+        imap:
+          ssl:
+            socketFactory:
+              fallback: false
+        debugger: true
+
+
+mybatis-plus:
+  configuration:
+    #在映射实体或者属性时，将数据库中表名和字段名中的下划线去掉，按照驼峰命名法映射
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.nologging.NoLoggingImpl
+  global-config:
+    db-config:
+      id-type: assign_id
+excludePath: '/employee/login,/employee/logout,/backend/**,/front/**,/front/,/favicon.ico,/common/**,/user/login,/user/sendMsg'
+
+reggie:
+  path: D:\img\
+  # 服务端口
+
+
