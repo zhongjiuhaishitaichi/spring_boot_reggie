@@ -88,7 +88,7 @@ public class UserController {
      * ③返回结果（前端页面会进行跳转到登录页面）
      * @return
      */
-    @PostMapping("/loginout")
+    @PostMapping("/logout")
     public R<String> logout(HttpServletRequest request){
         //清理session中的用户id
         request.getSession().removeAttribute("user");
